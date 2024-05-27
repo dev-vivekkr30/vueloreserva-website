@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vueloreserva | Flight Booking Website</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="container-fluid top-bar">
+        <div class="container pt-3 pb-3 d-flex justify-content-between align-item-center">
+            <a href="index.html"><img src="images/logo.svg" alt="Vueloreserva Logo"></a>
+            <a href="tel:+1-844-609-9922">
+                <div class="call-tab d-flex justify-content-between align-item-center">
+                    <img class="me-2" style="max-width: 28px;" src="images/call-tab-icon.svg" alt="">
+                    <div class="call-number text-end">
+                        <p class="xsmall-font p-0 m-0">Call Us 24*7 Toll-Free</p>
+                        <p class="body-font m-0 fw-bold">+1-844-609-9922</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Top bar Ends -->
+
+    <div class="container-fluid search-form-section">
+        <div class="container wrapper">
+            <div class="search-engine">
+                <!-- trip-button -->
+                <div class="trip-btn mb-4 mt-3">
+                    <a href="#" class="trip-non-active-btn me-2">One Way</a>
+                    <a href="#" class="primary-btn me-2">Round Trip</a>
+                    <a href="#" class="trip-non-active-btn">Multicity</a>
+                </div>
+                <form class="search-engine-form d-flex justify-content-between align-items-end" action="#">
+                    <!-- Wherefrom - Whereto fields -->
+                    <div class="search-form-input d-flex justify-content-start align-item-center me-10">
+                        <div class="">
+                            <label for="departure" class="form-label base-font">Departure</label>
+                            <input type="text" class="form-control" id="fromCity" placeholder="Where from?">
+                        </div>
+                        <a class="whereChangeBtn" href="#"><img src="images/double-arrow.svg" alt=""></a>
+                        <div class="">
+                            <label for="departure" class="form-label base-font">Arrive</label>
+                            <input type="text" class="form-control" id="toCity" placeholder="Where to?">
+                        </div>
+                    </div>
+
+                    <!-- Select Dates -->
+                    <div class="search-form-input d-flex justify-content-start align-item-center me-10">
+                        <div class="">
+                            <label for="Journey Date" class="form-label base-font">Journey Date </label>
+                            <input type="text" onfocus="(this.type = 'date')" class="form-control journey-date"
+                                id="journeyDate" placeholder="dd-mm-yyyy">
+                        </div>
+                        <a class="whereChangeBtn" href="#"><img src="images/double-arrow.svg" alt=""></a>
+                        <div class="">
+                            <label for="Return Date" class="form-label base-font">Return Date</label>
+                            <input type="text" onfocus="(this.type = 'date')" class="form-control return-date"
+                                id="returnDate" placeholder="dd-mm-yyyy">
+                        </div>
+                    </div>
+
+                    <!-- Select Traveller and Class -->
+                    <div class="search-form-input d-flex justify-content-start align-item-center me-10">
+                        <div class="">
+                            <label for="Travel - Class" class="form-label base-font">Travel - Class</label>
+                            <div class="dropdown">
+                                <button class="btn travel-class-btn  dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    1 Traveler, Economy
+                                </button>
+                                <ul class="dropdown-menu traveler-dropdown">
+                                    <li class="dropdown-item d-flex justify-content-between align-items-center">
+                                        <p class="m-0 body-font">Adult <span class="small-font">(+12 yrs)</span></p>
+                                        <div class="add-traveler-btn d-flex justify-content-evenly align-items-center">
+                                            <button class="ince-btn">+</button>
+                                            <p class="m-0">1</p>
+                                            <button class="dece-btn">-</button>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item d-flex justify-content-between align-items-center">
+                                        <p class="m-0 body-font">Child <span class="small-font">(0-12 yrs)</span></p>
+                                        <div class="add-traveler-btn d-flex justify-content-evenly align-items-center">
+                                            <button class="ince-btn">+</button>
+                                            <p class="m-0">1</p>
+                                            <button class="dece-btn">-</button>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item d-flex justify-content-between align-items-center">
+                                        <p class="m-0 body-font">Infant <span class="small-font">(Upto 2 yrs)</span></p>
+                                        <div class="add-traveler-btn d-flex justify-content-evenly align-items-center">
+                                            <button class="ince-btn">+</button>
+                                            <p class="m-0">1</p>
+                                            <button class="dece-btn">-</button>
+                                        </div>
+                                    </li>
+                                    <div style="width: 100%; border: 1px solid #f3f3f3;" class="mt-2 mb-2"></div>
+                                    <li class="dropdown-item">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="travelClass"
+                                                id="classEconomy">
+                                            <label class="form-check-label body-font" for="economyClass">
+                                                Economy
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="travelClass"
+                                                id="classPremiumEconomy">
+                                            <label class="form-check-label body-font" for="classPremiumEconomy">
+                                                Premium Economy
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="travelClass"
+                                                id="classBusiness">
+                                            <label class="form-check-label body-font" for="businessClass">
+                                                Economy
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="travelClass"
+                                                id="classFirst">
+                                            <label class="form-check-label body-font" for="firstClass">
+                                                First
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="tertiary-btn search-engine-btn text-center d-flex justify-content-center align-item-center"><img
+                            src="images/search.svg" alt=""></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="container-fluid hero-section">
+        <h1 class="fw-bold">Discover Your Life, Travel Where you Want</h1>
+        <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. <br> Ut enim ad minim veniam,</h6>
+    </div>
+
+    <!-- Ads Banner -->
+
+    <div class="container mt-4 ads-banner wrapper text-center d-flex justify-content-between align-item-center">
+        <a href="#"><img src="images/addBanner1.png" class="img-fluid" alt="ads-banner"></a>
+        <a href="#"><img src="images/addBanner2.jpg" class="img-fluid" alt="ads-banner"></a>
+    </div>
+
+    <!-- why Us -->
+    <div class="container wrapper whyUs text-center">
+        <p class="text-uppercase letter-spacing-2">Our Features</p>
+        <h4 class="fw-bold">Join us and <span class="text-primary">Get Benefits</span></h4>
+        <div class="whyUs-card mt-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <img src="images/calender.png" class="mb-3" alt="calender">
+                            <h6 class="fw-medium">Book & Relax</h6>
+                            <p class="base-font m-0">We realize ideas from simple to complex, everything becomes easy to
+                                use</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <img src="images/calender.png" class="mb-3" alt="calender">
+                            <h6 class="fw-medium">Book & Relax</h6>
+                            <p class="base-font m-0">We realize ideas from simple to complex, everything becomes easy to
+                                use</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <img src="images/calender.png" class="mb-3" alt="calender">
+                            <h6 class="fw-medium">Book & Relax</h6>
+                            <p class="base-font m-0">We realize ideas from simple to complex, everything becomes easy to
+                                use</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <img src="images/calender.png" class="mb-3" alt="calender">
+                            <h6 class="fw-medium">Book & Relax</h6>
+                            <p class="base-font m-0">We realize ideas from simple to complex, everything becomes easy to
+                                use</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Loaction -->
+
+    <div class="container wrapper location-section text-center">
+        <p class="text-uppercase letter-spacing-2">Best Locations</p>
+        <h4 class="fw-bold mb-4">Discover the best Cities to visit in <span class="text-primary">Mexico</span></h4>
+
+        <ul class="location-tabs nav nav-pills d-flex justify-content-center align-items-center mb-4" id="pills-tab"
+            role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">Manzanillo</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Cancun</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Guanajuato</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                tabindex="0">
+                <div class="location-banner"></div>
+                <div class="location-details">
+                    <div class="container">
+                        <div class="content p-4">
+                            <h5 class="fw-bold">Manzanillo</h5>
+                            <p>Manzanillo is a Pacific Ocean port city and resort in the Mexican state of Colima. It's
+                                the site of 2 bays, Bahía de Manzanillo and Bahía de Santiago. The latter is known for
+                                beaches such as Playa La Audiencia, with calm surf for water sports. The waters off the
+                                coast have numerous coral reefs, shipwrecks and other dive sites. With a high
+                                concentration of marlin, the area is also known for deep-sea sportfishing.</p>
+                            <div class="d-flex justify-content-end align-items-end">
+                                <div class="me-4">
+                                    <div class="d-flex justify-content-start align-items-end"
+                                        style="font-family: var(--main-font);"><span
+                                            class="m-0 p-0 text-primary me-1">$</span>
+                                        <h4 class="fw-bold m-0 lh-1">399.50</h4>
+                                    </div>
+                                    <p class="small-font m-0">Price Starting from</p>
+                                </div>
+                                <a href="#" class="primary-btn">Book your Flight Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                tabindex="0">
+                <div class="location-banner"></div>
+                <div class="location-details">
+                    <div class="container">
+                        <div class="content p-4">
+                            <h5 class="fw-bold">Cancun</h5>
+                            <p>Manzanillo is a Pacific Ocean port city and resort in the Mexican state of Colima. It's
+                                the site of 2 bays, Bahía de Manzanillo and Bahía de Santiago. The latter is known for
+                                beaches such as Playa La Audiencia, with calm surf for water sports. The waters off the
+                                coast have numerous coral reefs, shipwrecks and other dive sites. With a high
+                                concentration of marlin, the area is also known for deep-sea sportfishing.</p>
+                            <div class="d-flex justify-content-end align-items-end">
+                                <div class="me-4">
+                                    <div class="d-flex justify-content-start align-items-end"
+                                        style="font-family: var(--main-font);"><span
+                                            class="m-0 p-0 text-primary me-1">$</span>
+                                        <h4 class="fw-bold m-0 lh-1">399.50</h4>
+                                    </div>
+                                    <p class="small-font m-0">Price Starting from</p>
+                                </div>
+                                <a href="#" class="primary-btn">Book your Flight Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                tabindex="0">
+                <div class="location-banner"></div>
+                <div class="location-details">
+                    <div class="container">
+                        <div class="content p-4">
+                            <h5 class="fw-bold">Guanajuato</h5>
+                            <p>Manzanillo is a Pacific Ocean port city and resort in the Mexican state of Colima. It's
+                                the site of 2 bays, Bahía de Manzanillo and Bahía de Santiago. The latter is known for
+                                beaches such as Playa La Audiencia, with calm surf for water sports. The waters off the
+                                coast have numerous coral reefs, shipwrecks and other dive sites. With a high
+                                concentration of marlin, the area is also known for deep-sea sportfishing.</p>
+                            <div class="d-flex justify-content-end align-items-end">
+                                <div class="me-4">
+                                    <div class="d-flex justify-content-start align-items-end"
+                                        style="font-family: var(--main-font);"><span
+                                            class="m-0 p-0 text-primary me-1">$</span>
+                                        <h4 class="fw-bold m-0 lh-1">399.50</h4>
+                                    </div>
+                                    <p class="small-font m-0">Price Starting from</p>
+                                </div>
+                                <a href="#" class="primary-btn">Book your Flight Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flight Deals -->
+    <div class="container wrapper flight-deals">
+        <p class="text-uppercase letter-spacing-2 text-center">Flight Deals</p>
+        <h4 class="fw-bold mb-4 text-center">Popular Flights Deals <span class="text-primary">Only for you</span></h4>
+        <!-- Flight Deals Card -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card flight-deals-card">
+                    <img src="images/deal1.jpg" class="card-img-top rounded-0" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title fw-semibold">Seattle <span><img src="images/interchange-icon.svg" alt="interchange-icon"></span>New York</h6>
+                        <p class="card-text small-font trip-tag">Round Trip</p>
+                        <div class="deal-price d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-start align-items-end" style="font-family: var(--main-font);">
+                                <span class="m-0 p-0 text-primary me-1">$</span>
+                                <h4 class="fw-bold m-0 lh-1">399.50</h4>
+                            </div>
+                            <a href="#" class=" p-0 flight-deals-btn"></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card flight-deals-card">
+                    <img src="images/deal2.png" class="card-img-top rounded-0" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title fw-semibold">Seattle <span><img src="images/interchange-icon.svg" alt="interchange-icon"></span>New York</h6>
+                        <p class="card-text small-font trip-tag">Round Trip</p>
+                        <div class="deal-price d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-start align-items-end" style="font-family: var(--main-font);">
+                                <span class="m-0 p-0 text-primary me-1">$</span>
+                                <h4 class="fw-bold m-0 lh-1">399.50</h4>
+                            </div>
+                            <a href="#" class=" p-0 flight-deals-btn"></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card flight-deals-card">
+                    <img src="images/deal3.jpg" class="card-img-top rounded-0" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title fw-semibold">Seattle <span><img src="images/interchange-icon.svg" alt="interchange-icon"></span>New York</h6>
+                        <p class="card-text small-font trip-tag">Round Trip</p>
+                        <div class="deal-price d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-start align-items-end" style="font-family: var(--main-font);">
+                                <span class="m-0 p-0 text-primary me-1">$</span>
+                                <h4 class="fw-bold m-0 lh-1">399.50</h4>
+                            </div>
+                            <a href="#" class=" p-0 flight-deals-btn"></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card flight-deals-card">
+                    <img src="images/deal1.jpg" class="card-img-top rounded-0" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title fw-semibold">Seattle <span><img src="images/interchange-icon.svg" alt="interchange-icon"></span>New York</h6>
+                        <p class="card-text small-font trip-tag">Round Trip</p>
+                        <div class="deal-price d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-start align-items-end" style="font-family: var(--main-font);">
+                                <span class="m-0 p-0 text-primary me-1">$</span>
+                                <h4 class="fw-bold m-0 lh-1">399.50</h4>
+                            </div>
+                            <a href="#" class=" p-0 flight-deals-btn"></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card flight-deals-card">
+                    <img src="images/deal2.png" class="card-img-top rounded-0" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title fw-semibold">Seattle <span><img src="images/interchange-icon.svg" alt="interchange-icon"></span>New York</h6>
+                        <p class="card-text small-font trip-tag">Round Trip</p>
+                        <div class="deal-price d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-start align-items-end" style="font-family: var(--main-font);">
+                                <span class="m-0 p-0 text-primary me-1">$</span>
+                                <h4 class="fw-bold m-0 lh-1">399.50</h4>
+                            </div>
+                            <a href="#" class=" p-0 flight-deals-btn"></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card flight-deals-card">
+                    <img src="images/deal3.jpg" class="card-img-top rounded-0" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title fw-semibold">Seattle <span><img src="images/interchange-icon.svg" alt="interchange-icon"></span>New York</h6>
+                        <p class="card-text small-font trip-tag">Round Trip</p>
+                        <div class="deal-price d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-start align-items-end" style="font-family: var(--main-font);">
+                                <span class="m-0 p-0 text-primary me-1">$</span>
+                                <h4 class="fw-bold m-0 lh-1">399.50</h4>
+                            </div>
+                            <a href="#" class=" p-0 flight-deals-btn"></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Last Minute Flight Deal -->
+
+    <div class="container wrapper last-min-flight">
+        <p class="text-uppercase letter-spacing-2 text-center">Last Minute Flights</p>
+        <h4 class="fw-bold mb-4 text-center">Have you miss your Flight? <span class="text-primary">Book Our Last Minute Flight</span></h4>
+        <!-- Last minute flight deals -->
+
+        
+
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="card text-bg-dark border-0">
+                    <img src="images/last-min-flight.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex justify-content-between align-items-center" style="top: inherit;">
+                      <h4 class="card-title fw-semibold m-0">Hawaii</h4>
+                      <a href="#" class="primary-btn d-flex">$399.50 <img src="images/arrowRightLight.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card text-bg-dark border-0">
+                    <img src="images/last-min-flight.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex justify-content-between align-items-center" style="top: inherit;">
+                      <h4 class="card-title fw-semibold m-0">Hawaii</h4>
+                      <a href="#" class="primary-btn d-flex">$399.50 <img src="images/arrowRightLight.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card text-bg-dark border-0">
+                    <img src="images/last-min-flight.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex justify-content-between align-items-center" style="top: inherit;">
+                      <h4 class="card-title fw-semibold m-0">Hawaii</h4>
+                      <a href="#" class="primary-btn d-flex">$399.50 <img src="images/arrowRightLight.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card text-bg-dark border-0">
+                    <img src="images/last-min-flight.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex justify-content-between align-items-center" style="top: inherit;">
+                      <h4 class="card-title fw-semibold m-0">Hawaii</h4>
+                      <a href="#" class="primary-btn d-flex">$399.50 <img src="images/arrowRightLight.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card text-bg-dark border-0">
+                    <img src="images/last-min-flight.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex justify-content-between align-items-center" style="top: inherit;">
+                      <h4 class="card-title fw-semibold m-0">Hawaii</h4>
+                      <a href="#" class="primary-btn d-flex">$399.50 <img src="images/arrowRightLight.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card text-bg-dark border-0">
+                    <img src="images/last-min-flight.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex justify-content-between align-items-center" style="top: inherit;">
+                      <h4 class="card-title fw-semibold m-0">Hawaii</h4>
+                      <a href="#" class="primary-btn d-flex">$399.50 <img src="images/arrowRightLight.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card text-bg-dark border-0">
+                    <img src="images/last-min-flight.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay d-flex justify-content-between align-items-center" style="top: inherit;">
+                      <h4 class="card-title fw-semibold m-0">Hawaii</h4>
+                      <a href="#" class="primary-btn d-flex">$399.50 <img src="images/arrowRightLight.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Bootstrap -->
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="JS/main.js"></script>
+    
+</body>
+
+</html>

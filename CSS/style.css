@@ -478,3 +478,32 @@ a{
 .flight-deals .flight-deals-card:hover .card-body .deal-price .flight-deals-btn{
     background-image: url('/images/arrowRight.svg');
 }
+
+.owl-carousel .owl-nav button.owl-next{
+    width: 48px;
+    height: 48px;
+    background: var(--primary-color-300) !important;
+    color: var(--white-color) !important;
+    font-size: 28px !important;
+    font-family: var(--main-font) !important;
+    line-height: 0;
+    margin: 0;
+    padding: 0 !important;
+    border-radius: 0px;
+}
+.owl-carousel .owl-nav button.owl-prev{
+    width: 48px;
+    height: 48px;
+    background: var(--neutral-color-20) !important;
+    color: var(--neutral-color-90) !important;
+    font-size: 28px !important;
+    font-family: var(--main-font) !important;
+    line-height: 0;
+    margin: 0;
+    padding: 0 !important;
+    border-radius: 0px;
+}
+
+.blog-section{
+    background-color: var(--neutral-color-20);
+}

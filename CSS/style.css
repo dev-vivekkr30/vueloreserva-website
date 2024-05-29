@@ -505,5 +505,57 @@ a{
 }
 
 .blog-section{
+    height: max-content;
     background-color: var(--neutral-color-20);
+}
+
+.blog-section .blod-card-section .blog-card{
+    height: 250px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 15%, rgba(255,255,255,1) 15%);
+}
+
+
+/* Footer Section */
+
+.footer .footer-links{
+    background-color: var(--neutral-color-20);
+}
+.footer .footer-links .list-group{
+    font-family: var(--main-font);
+}
+.footer .footer-links .list-group-heading h5{
+    font-family: var(--main-font);
+    color: var(--body-color);
+}
+.footer .footer-links .list-group-item .link-item{
+    font-family: var(--main-font);
+    color: var(--neutral-color-200);
+}
+.footer .footer-links .list-group-item .link-item-btn{
+    font-family: var(--main-font);
+    color: var(--black-color);
+    padding:8px 12px 8px 0px;
+    border-bottom: 1px solid var(--primary-color-300);
+}
+.footer .footer-bottom{
+    background-color: var(--body-color);
+}
+.footer .footer-bottom .newsletter-section{
+    color: var(--white-color);
+    font-family: var(--main-font);
+}
+.footer .footer-bottom .newsletter-section .input-group{
+    width: auto;
+}
+.footer .footer-bottom .newsletter-section .newsletter-form .input-icon, .footer .footer-bottom .newsletter-section .newsletter-form .form-control{
+    background-color: var(--neutral-color-800);
+}
+
+.footer .footer-bottom .newsletter-section .newsletter-form .form-control{
+    max-width: 100%;
+    color: var(--white-color);
+}
+.footer .footer-bottom .newsletter-section .newsletter-form .form-control::placeholder{
+    color: var(--neutral-color-400);
 }

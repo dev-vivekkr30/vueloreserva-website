@@ -532,6 +532,9 @@ a{
     font-family: var(--main-font);
     color: var(--neutral-color-200);
 }
+.footer .footer-links .list-group-item .link-item:hover{
+    color: var(--black-color);
+}
 .footer .footer-links .list-group-item .link-item-btn{
     font-family: var(--main-font);
     color: var(--black-color);
@@ -558,4 +561,31 @@ a{
 }
 .footer .footer-bottom .newsletter-section .newsletter-form .form-control::placeholder{
     color: var(--neutral-color-400);
+}
+
+.footer .footer-bottom .footer-section .footer-contact-info .footer-contact-info-link{
+    color: var(--white-color);
+    font-family: var(--main-font);
+    margin-bottom: 12px;
+}
+
+
+/* Review Section */
+.review-carousel .card{
+    border: 1px solid var(--neutral-color-200);
+    border-radius: 0;
+    padding: 24px;
+    position: relative;
+    overflow: visible;
+    margin: 0px 14px;
+    margin-bottom: 24px;
+    /* active card */
+    box-shadow: 10px 10px 16px #00516914;
+}
+
+.review-carousel .card .quote-icon{
+    max-width: 36px;
+    position: absolute;
+    bottom: -16px;
+    left: 42%;
 }
